@@ -88,6 +88,11 @@ import { sendChannelMessageTool, sendChannelMessageHandler, sendChannelMessageSc
 import { sendDirectMessageTool, sendDirectMessageHandler, sendDirectMessageSchema } from './tools/messenger/send-direct-message.js';
 import { getChannelMessagesTool, getChannelMessagesHandler, getChannelMessagesSchema } from './tools/messenger/get-channel-messages.js';
 
+// Calendar tools
+import { getCalendarsTool, getCalendarsHandler, getCalendarsSchema } from './tools/calendar/get-calendars.js';
+import { getEventsTool, getEventsHandler, getEventsSchema } from './tools/calendar/get-events.js';
+import { createEventTool, createEventHandler, createEventSchema } from './tools/calendar/create-event.js';
+
 
 // Load environment variables
 dotenv.config();
@@ -167,6 +172,11 @@ const toolRegistry = {
   'send-messenger-direct-message': { handler: sendDirectMessageHandler, schema: sendDirectMessageSchema },
   'get-messenger-channel-messages': { handler: getChannelMessagesHandler, schema: getChannelMessagesSchema },
 
+  // Calendar tools
+  'get-calendars': { handler: getCalendarsHandler, schema: getCalendarsSchema },
+  'get-calendar-events': { handler: getEventsHandler, schema: getEventsSchema },
+  'create-calendar-event': { handler: createEventHandler, schema: createEventSchema },
+
 };
 
 /**
@@ -240,6 +250,11 @@ const tools = [
   sendChannelMessageTool,
   sendDirectMessageTool,
   getChannelMessagesTool,
+
+  // Calendar tools
+  getCalendarsTool,
+  getEventsTool,
+  createEventTool,
 
 ];
 
